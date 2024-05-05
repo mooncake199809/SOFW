@@ -6,7 +6,10 @@ In this work, we propose SOFW, a synergistic optimization framework that investi
 The core of SOFW is identifying domain-shared parameters to encode universal scene attributes, while employing domain-specific parameters to delve into the particularities of each scene domain. 
 
 
+# Main Results
+In this work, we conduct 3D object detection task on S3DIS, ScanNet, and SUN RGB-D dataset.
 
+## S3DIS 
 
 
 
