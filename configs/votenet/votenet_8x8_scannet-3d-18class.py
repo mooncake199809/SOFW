@@ -3,8 +3,6 @@ _base_ = [
     '../_base_/schedules/schedule_3x.py', '../_base_/default_runtime.py'
 ]
 
-custom_imports=dict(imports='mmcls.models', allow_failed_imports=False) 
-
 # model settings
 model = dict(
     backbone=dict(conv_cfg=dict(type='Conv2d_share')),
