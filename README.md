@@ -39,6 +39,7 @@ We can simply run the following code to conduct evaluation on the S3DIS dataset.
 ```
 bash tools/dist_test.sh ./configs/votenet/votenet_8x8_s3dis-3d-5class.py ./weights/SOFW_S3DIS.pth 1 --eval bbox
 ```
+When evaluating SOFW+, please utilize the commented code in ./configs/_base_/models/votenet.py to modified the architecture of the backbone.
 
 ## Evaluation on the ScanNet Dataset
 We can simply run the following code to conduct evaluation on the ScanNet dataset.
