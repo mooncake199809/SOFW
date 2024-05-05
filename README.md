@@ -13,17 +13,30 @@ The detection accuracy on these datasets is shown as follow.
 ## S3DIS 
  Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
 --------------|--------------------|--------|---------|
- mAP@0.25     | 52.0               | 57.48  | 67.69   |
- mAP@0.5      | 23.1               | 33.74  | 40.35   |
+ mAP@0.25     |         52.0       | 57.48  |  67.69  |
+ mAP@0.5      |         23.1       | 33.74  |  40.35  |
 
 ## ScanNet V2
  Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
 --------------|--------------------|--------|---------|
- mAP@0.25     | 62.3               | 68.31  | 70.89   |
- mAP@0.5      | 40.8               | 48.95  | 52.31   |
+ mAP@0.25     |         62.3       | 68.31  |  70.89  |
+ mAP@0.5      |         40.8       | 48.95  |  52.31  |
 
  ## SUN RGB-D 
  Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
 --------------|--------------------|--------|---------|
- mAP@0.25     | 59.8               | 62.62  | 65.20   |
- mAP@0.5      | 35.8               | 40.54  | 41.95   |
+ mAP@0.25     |         59.8       | 62.62  |  65.20  |
+ mAP@0.5      |         35.8       | 40.54  |  41.95  |
+
+# Create Environment
+SOFW is built upon MMdetection3d (https://github.com/open-mmlab/mmdetection3d). Please follow MMdetection3d to create the environment and process datasets.
+
+# Evaluation
+The pre-trained models for SOFW and SOFW+ on the S3DIS, ScanNet, and SUN RGB-D dataset can be downloaded from XXXX.
+
+## Evaluation on the S3DIS Dataset
+We can simply run the following code to conduct evaluation on the S3DIS dataset.
+```
+bash tools/dist_test.sh ./configs/votenet/votenet_16x8_sunrgbd-3d-10class.py ./weights/SOFW_S3DIS.pth 1 --eval bbox
+```
+
