@@ -29,10 +29,10 @@ The detection accuracy on these datasets is shown as follow.
  mAP@0.5      |         35.8       | 40.54  |  41.95  |
 
 # Create Environment
-SOFW is built upon MMdetection3d (https://github.com/open-mmlab/mmdetection3d). Please follow MMdetection3d to create the environment and process datasets.
+SOFW is built upon [MMdetection3d](https://github.com/open-mmlab/mmdetection3d). Please follow MMdetection3d to create the environment and process datasets.
 
 # Evaluation
-The pre-trained models for SOFW and SOFW+ on the S3DIS, ScanNet, and SUN RGB-D dataset can be downloaded from (https://drive.google.com/drive/folders/1r6DJCKma7PhJrsLxJpkuQ4MH9nHR7BPc).
+The pre-trained models for SOFW and SOFW+ on the S3DIS, ScanNet, and SUN RGB-D dataset can be downloaded from [SOFW_Weight](https://drive.google.com/drive/folders/1r6DJCKma7PhJrsLxJpkuQ4MH9nHR7BPc).
 
 ## Evaluation on the S3DIS Dataset
 We can simply run the following code to conduct evaluation on the S3DIS dataset.
