@@ -3,9 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import CONV_LAYERS, NORM_LAYERS
 
-THRESHOLD = 0.5
-
-
 @CONV_LAYERS.register_module()
 class Conv2d_share(nn.Conv2d):
     def __init__(self, in_channels, out_channels, kernel_size, share_type=None,
