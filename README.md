@@ -37,6 +37,17 @@ The pre-trained models for SOFW and SOFW+ on the S3DIS, ScanNet, and SUN RGB-D d
 ## Evaluation on the S3DIS Dataset
 We can simply run the following code to conduct evaluation on the S3DIS dataset.
 ```
-bash tools/dist_test.sh ./configs/votenet/votenet_16x8_sunrgbd-3d-10class.py ./weights/SOFW_S3DIS.pth 1 --eval bbox
+bash tools/dist_test.sh ./configs/votenet/votenet_8x8_s3dis-3d-5class.py ./weights/SOFW_S3DIS.pth 1 --eval bbox
 ```
 
+## Evaluation on the ScanNet Dataset
+We can simply run the following code to conduct evaluation on the ScanNet dataset.
+```
+bash tools/dist_test.sh ./configs/votenet/votenet_8x8_scannet-3d-18class.py ./weights/SOFW_SCANNET.pth 1 --eval bbox
+```
+
+## Evaluation on the SUN RGB-D Dataset
+We can simply run the following code to conduct evaluation on the SUN RGB-D dataset.
+```
+bash tools/dist_test.sh ./configs/votenet/votenet_16x8_sunrgbd-3d-10class.py ./weights/SOFW_SUNRGBD.pth 1 --eval bbox
+```
