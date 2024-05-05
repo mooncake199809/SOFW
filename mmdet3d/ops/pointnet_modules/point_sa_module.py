@@ -205,9 +205,6 @@ class BasePointSAModule(nn.Module):
 
                 self.prompt_weights = nn.Sequential(
                     nn.Linear(self.mlp_channels[0][0] + 3, num_point))
-                    # nn.LayerNorm(num_point),
-                    # nn.GELU())
-
 
     def _sample_points(self, points_xyz, features, indices, target_xyz):
         """Perform point sampling based on inputs.
@@ -271,12 +268,9 @@ class BasePointSAModule(nn.Module):
         emb = x.mean(dim=(-2,-1))
         prompt_weights = F.softmax(self.prompt_weights(emb),dim=1).unsqueeze(-1).unsqueeze(-1)
 
-        # combine prompt embeddings with point embeddings
         B = x.shape[0]
         K = x.shape[-1]
-        # x = torch.cat((x, (self.prompt_proj(self.prompt_embeddings)[..., None].expand(B, -1, -1, K) * prompt_weights).transpose(1, 2)), dim=2)
         x = x + (self.prompt_proj(self.prompt_embeddings)[..., None].expand(B, -1, -1, K) * prompt_weights).transpose(1, 2)
-
         return x
 
     def forward(
@@ -321,13 +315,6 @@ class BasePointSAModule(nn.Module):
             
             if self.use_prompt:
                 grouped_results = self.incorporate_prompt(grouped_results)
-        
-            # # Modified by DK
-            # np.save(f"/data/dk_dataset/results/sofr/universal_features/ScanNet/scene0169_00/all_params/SA_{index}_input.npy", grouped_results.cpu().numpy())
-            # np.save(f"/data/dk_dataset/results/sofr/universal_features/ScanNet/scene0169_00/all_params/XYZ_{index}_input.npy", new_xyz.cpu().numpy())
-            # torch.save(self.mlps[i], f"/data/dk_dataset/results/sofr/universal_features/ScanNet/scene0169_00/all_params/SA_{index}_models.pth")
-            # new_features = self.mlps[i](grouped_results)
-            # np.save(f"/data/dk_dataset/results/sofr/universal_features/ScanNet/scene0169_00/all_params/SA_{index}_output.npy", new_features.cpu().numpy())
 
             # (B, mlp[-1], num_point, nsample)
             new_features = self.mlps[i](grouped_results)
@@ -340,13 +327,6 @@ class BasePointSAModule(nn.Module):
 
             # (B, mlp[-1], num_point)
             new_features = self._pool_features(new_features)
-            
-            # if self.use_prompt:
-            #     new_features, _ = torch.split(new_features, self.num_point[0], -1)
-
-            # new_features, _ = self.global_att(new_xyz, new_features.transpose(1, 2))
-            # new_features = new_features.transpose(1, 2)
-
             new_features_list.append(new_features)
         return new_xyz, torch.cat(new_features_list, dim=1), indices
 
@@ -425,7 +405,6 @@ class PointSAModuleMSG(BasePointSAModule):
                         kernel_size=(1, 1),
                         stride=(1, 1),
                         conv_cfg=conv_cfg,
-                        # conv_cfg=dict(type='Conv2d'),
                         norm_cfg=norm_cfg,
                         bias=bias))
             self.mlps.append(mlp)

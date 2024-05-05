@@ -4,7 +4,6 @@ _base_ = [
 ]
 custom_imports=dict(imports='mmcls.models', allow_failed_imports=False) 
 
-# model settings
 model = dict(
     backbone=dict(conv_cfg=dict(type='Conv2d_share')),
     bbox_head=dict(
@@ -22,8 +21,5 @@ model = dict(
                 [0.404671, 1.071108, 1.688889], [0.76584, 1.398258, 0.472728]
             ]),
     ))
-
-
-# load_from = '/home/xietao/xt_dataset/joint_3d_dk/mtl_2xchannel/_task_sunrgbd/iter_20000.pth'
 
 find_unused_parameters=True

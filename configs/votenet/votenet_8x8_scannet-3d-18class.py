@@ -35,11 +35,7 @@ model = dict(
                         [1.1511526, 1.0546296, 0.49706793],
                         [0.47535285, 0.49249494, 0.5802117]])))
 
-# yapf:disable
 log_config = dict(interval=10)
-# yapf:enable
-
-# load_from = '/home/xietao/xt_dataset/joint_3d_dk/mtl_2xchannel/_task_s3dis/iter_20000.pth'
 
 optimizer = dict(type='AdamW', lr=0.008, weight_decay=0.05)
 optimizer_config = dict(grad_clip=dict(max_norm=10, norm_type=2))
