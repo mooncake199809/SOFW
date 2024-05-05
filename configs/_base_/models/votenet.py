@@ -3,7 +3,6 @@ model = dict(
     backbone=dict(
         type='PointNet2SASSG',
         in_channels=4,
-        # num_points=(4096, 2048, 1024, 512),      # Modified by DK
         num_points=(2048, 1024, 512, 256),
         radius=(0.2, 0.4, 0.8, 1.2),
         num_samples=(64, 32, 16, 16),

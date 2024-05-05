@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: mmdet3d
+Version: 1.0.0rc2
+Summary: OpenMMLab's next-generation platformfor general 3D object detection.
+Home-page: https://github.com/open-mmlab/mmdetection3d
+Author: MMDetection3D Contributors
+Author-email: zwwdev@gmail.com
+License: Apache License 2.0
+Keywords: computer vision,3D object detection
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Provides-Extra: all
+Provides-Extra: tests
+Provides-Extra: build
+Provides-Extra: optional
+
+# Official Code for SOFW
+This is the official code for our paper "SOFW: A Synergistic Optimization Framework for Indoor 3D Object Detection"
+![comparison](https://github.com/mooncake199809/SOFW/blob/main/docs/overall.png)
+
+In this work, we propose SOFW, a synergistic optimization framework that investigates the feasibility of optimizing 3D object detection tasks concurrently spanning several dataset domains.
+The core of SOFW is identifying domain-shared parameters to encode universal scene attributes, while employing domain-specific parameters to delve into the particularities of each scene domain. 
+
+
+# Main Results
+In this work, we conduct 3D object detection task on S3DIS, ScanNet, and SUN RGB-D dataset.
+The detection accuracy on these datasets is shown as follow.
+
+## S3DIS 
+ Method       | VoteNet (baseline) | SOFW | SOFW+ | 
+--------------|--------------------|
+ mAP@0.25     | 52.0               | 57.48
+ mAP@0.5      | 23.1               | 33.74   
+
+
+
+
