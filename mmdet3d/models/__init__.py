@@ -18,6 +18,7 @@ from .necks import *  # noqa: F401,F403
 from .roi_heads import *  # noqa: F401,F403
 from .segmentors import *  # noqa: F401,F403
 from .voxel_encoders import *  # noqa: F401,F403
+from .cnn import *
 
 __all__ = [
     'BACKBONES', 'NECKS', 'ROI_EXTRACTORS', 'SHARED_HEADS', 'HEADS', 'LOSSES',
