@@ -265,6 +265,7 @@ class BasePointSAModule(nn.Module):
         return new_features.squeeze(-1).contiguous()
 
     def incorporate_prompt(self, x):
+        # [B C N S] -> [B C]
         emb = x.mean(dim=(-2,-1))
         prompt_weights = F.softmax(self.prompt_weights(emb),dim=1).unsqueeze(-1).unsqueeze(-1)
 

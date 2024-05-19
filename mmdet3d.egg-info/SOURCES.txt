@@ -103,6 +103,8 @@ mmdet3d/models/backbones/pointnet2_sa_msg.py
 mmdet3d/models/backbones/pointnet2_sa_ssg.py
 mmdet3d/models/backbones/pointnet2_sa_ssg_moe.py
 mmdet3d/models/backbones/second.py
+mmdet3d/models/cnn/__init__.py
+mmdet3d/models/cnn/conv2d_share.py
 mmdet3d/models/decode_heads/__init__.py
 mmdet3d/models/decode_heads/decode_head.py
 mmdet3d/models/decode_heads/dgcnn_head.py
@@ -214,7 +216,6 @@ mmdet3d/ops/pointnet_modules/builder.py
 mmdet3d/ops/pointnet_modules/paconv_sa_module.py
 mmdet3d/ops/pointnet_modules/point_fp_module.py
 mmdet3d/ops/pointnet_modules/point_sa_module.py
-mmdet3d/ops/pointnet_modules/point_sa_module_moe.py
 mmdet3d/ops/spconv/__init__.py
 mmdet3d/utils/__init__.py
 mmdet3d/utils/collect_env.py

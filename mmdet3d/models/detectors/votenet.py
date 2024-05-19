@@ -106,9 +106,9 @@ class VoteNet(SingleStage3DDetector):
 
         return [merged_bboxes]
 
-    # support finetune
-    def train(self, mode):
-        super(VoteNet, self).train(mode)
-        for name, params in self.named_parameters():
-            if "specific_weight" not in name and "conv_pred" not in name and 'prompt_proj' not in name and 'prompt_weights' not in name and "prompt_embeddings" not in name:
-                params.requires_grad = False
+    # # support finetune
+    # def train(self, mode):
+    #     super(VoteNet, self).train(mode)
+    #     for name, params in self.named_parameters():
+    #         if "specific_weight" not in name and "conv_pred" not in name and 'prompt_proj' not in name and 'prompt_weights' not in name and "prompt_embeddings" not in name:
+    #             params.requires_grad = False

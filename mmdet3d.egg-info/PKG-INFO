@@ -33,11 +33,45 @@ In this work, we conduct 3D object detection task on S3DIS, ScanNet, and SUN RGB
 The detection accuracy on these datasets is shown as follow.
 
 ## S3DIS 
- Method       | VoteNet (baseline) | SOFW | SOFW+ | 
---------------|--------------------|
- mAP@0.25     | 52.0               | 57.48
- mAP@0.5      | 23.1               | 33.74   
+ Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
+--------------|--------------------|--------|---------|
+ mAP@0.25     |         52.0       | 57.48  |  67.69  |
+ mAP@0.5      |         23.1       | 33.74  |  40.35  |
 
+## ScanNet V2
+ Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
+--------------|--------------------|--------|---------|
+ mAP@0.25     |         62.3       | 68.31  |  70.89  |
+ mAP@0.5      |         40.8       | 48.95  |  52.31  |
 
+ ## SUN RGB-D 
+ Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
+--------------|--------------------|--------|---------|
+ mAP@0.25     |         59.8       | 62.62  |  65.20  |
+ mAP@0.5      |         35.8       | 40.54  |  41.95  |
 
+# Create Environment
+SOFW is built upon [MMdetection3d](https://github.com/open-mmlab/mmdetection3d). Please follow MMdetection3d to create the environment and process datasets.
+
+# Evaluation
+The pre-trained models for SOFW and SOFW+ on the S3DIS, ScanNet, and SUN RGB-D dataset can be downloaded from [SOFW_Weight](https://drive.google.com/drive/folders/1r6DJCKma7PhJrsLxJpkuQ4MH9nHR7BPc).
+
+## Evaluation on the S3DIS Dataset
+We can simply run the following code to conduct evaluation on the S3DIS dataset.
+```
+bash tools/dist_test.sh ./configs/votenet/votenet_8x8_s3dis-3d-5class.py ./weights/SOFW_S3DIS.pth 1 --eval bbox
+```
+When evaluating SOFW+, please utilize the commented code in ./configs/_base_/models/votenet.py to modified the architecture of the backbone.
+
+## Evaluation on the ScanNet Dataset
+We can simply run the following code to conduct evaluation on the ScanNet dataset.
+```
+bash tools/dist_test.sh ./configs/votenet/votenet_8x8_scannet-3d-18class.py ./weights/SOFW_SCANNET.pth 1 --eval bbox
+```
+
+## Evaluation on the SUN RGB-D Dataset
+We can simply run the following code to conduct evaluation on the SUN RGB-D dataset.
+```
+bash tools/dist_test.sh ./configs/votenet/votenet_16x8_sunrgbd-3d-10class.py ./weights/SOFW_SUNRGBD.pth 1 --eval bbox
+```
 
