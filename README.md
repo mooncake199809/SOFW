@@ -19,14 +19,14 @@ The detection accuracy on these datasets is shown as follow.
 ## ScanNet V2
  Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
 --------------|--------------------|--------|---------|
- mAP@0.25     |         62.3       | 68.31  |  70.89  |
- mAP@0.5      |         40.8       | 48.95  |  52.31  |
+ mAP@0.25     |         63.0       | 68.31  |  70.89  |
+ mAP@0.5      |         42.4       | 48.95  |  52.31  |
 
  ## SUN RGB-D 
  Method       | VoteNet (baseline) |  SOFW  |  SOFW+  | 
 --------------|--------------------|--------|---------|
- mAP@0.25     |         59.8       | 62.62  |  65.20  |
- mAP@0.5      |         35.8       | 40.54  |  41.95  |
+ mAP@0.25     |         60.6       | 62.62  |  65.20  |
+ mAP@0.5      |         36.2       | 40.54  |  41.95  |
 
 # Create Environment
 SOFW is built upon [MMdetection3d](https://github.com/open-mmlab/mmdetection3d). Please follow MMdetection3d to create the environment and process datasets.
